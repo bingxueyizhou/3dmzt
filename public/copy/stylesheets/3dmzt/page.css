@@ -1,0 +1,14 @@
+img{
+    max-width: 100%;
+}
+.page-alert-text{
+    position: absolute;
+    background-color: #3c3c3c;
+    left: 10px;
+    top: 10px;
+    color: #ff2222;
+}
+.page-no-text{
+    color: #3c3c3c;
+    background-color: #fefffe;
+}
