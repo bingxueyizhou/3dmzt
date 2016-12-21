@@ -1,3 +1,9 @@
+## success to install sqlite3
+# 2016/12/21
+refrence to [node-gyp](https://www.npmjs.com/package/node-gyp)
+download python2.7、Visual C++ Build tools 2015
+using `npm install sqlite3 --build-from-source --save`
+
 ## add shell script
 # 2016/12/19
 for base function of get program path. And download new modules.
