@@ -3,6 +3,8 @@
  */
 var express = require('express');
 var sqlite3 = require('sqlite3');
+var CONF    = require('../../class/conf.js');
+
 var router = express.Router();
 
 var mainURL = "http://www.3dmgame.com/zt/";
@@ -18,7 +20,8 @@ router.get('/', function(req, res, next) {
     //console.log(Reg.splitUrl(mainURL+date+"/"+aid+".html"));
     var thisSql = (page==null?  "SELECT content FROM zt3dm_pages where aid='"+aid+"' and page=1":
                                 "SELECT content FROM zt3dm_pages where aid='"+aid+"' and page="+page+"");
-    var db = new sqlite3.Database('./sqlitedb/zt3dm.sqlite');
+    console.log(CONF.DB+'/zt3dm.sqlite');
+    var db = new sqlite3.Database(CONF.DB+'/zt3dm.sqlite');
     db.all(
         thisSql,
         function(err,rows){
@@ -39,7 +42,7 @@ router.get('/info',function(req, res, next) {
     if (aid==null || date==null){
         res.render('str',{str: ""});
     }
-    var db = new sqlite3.Database('./sqlitedb/zt3dm.sqlite');
+    var db = new sqlite3.Database(CONF.DB+'/zt3dm.sqlite');
     db.all(
         "SELECT * FROM zt3dm where aid='"+aid+"' and date='"+date+"'",
         function(err,rows){

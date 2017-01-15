@@ -238,13 +238,13 @@ var seek = {
         console.log(seek.name +" 开始正则");
         if (initDB())    callback(1,seek.name.ver);
         else RegMain.doSeekIndex(function(ret){
-                callback(ret,seek.name);
-            });
+                                    callback(ret,seek.name);
+                                }  );
     },
     info : function(){
-        return {name:"3dm杂谈",ver:"v1.0",date:"2016/2/28"};
+        return {name:"3dm杂谈",ver:"v2.0",date:"2017/1/15"};
     },
-    name : "3dm杂谈@v1.0"
+    name : "3dm杂谈@v2.0"
 }
 
 module.exports = seek;
