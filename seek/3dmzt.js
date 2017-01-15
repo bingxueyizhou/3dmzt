@@ -4,9 +4,10 @@
  * Modify@2016/7/26 关于抓取目录的修改
  */
 var sqlite3 = require('sqlite3');
-var curl   = require('request');
+var curl    = require('request');
+var CONF    = require('../class/conf.js');
 
-var dbdir = "D:/git/node/sqlitedb/";
+var dbdir = CONF.DB;
 var dbi;
 var db3;
 var zturl  = 'http://www.3dmgame.com/zt/';//'http://www.3dmgame.com/zt/'
@@ -30,14 +31,14 @@ var initDB = function(){
         });
     }
     //初始化数据库
-    dbi = new sqlite3.Database( dbdir+'home.sqlite');
+    dbi = new sqlite3.Database( dbdir+'/home.sqlite');
     dbi.run("CREATE TABLE IF NOT EXISTS home(" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "date DATETIME," +
             "type VARCHAR(255)," +
             "name VARCHAR(255) UNIQUE," +
             "url TEXT)");
-    db3 = new sqlite3.Database(dbdir+'zt3dm.sqlite');
+    db3 = new sqlite3.Database(dbdir+'/zt3dm.sqlite');
     db3.run("CREATE TABLE IF NOT EXISTS zt3dm(" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "aid INTEGER UNIQUE," +
@@ -237,13 +238,13 @@ var seek = {
         console.log(seek.name +" 开始正则");
         if (initDB())    callback(1,seek.name.ver);
         else RegMain.doSeekIndex(function(ret){
-                callback(ret,seek.name);
-            });
+                                    callback(ret,seek.name);
+                                }  );
     },
     info : function(){
-        return {name:"3dm杂谈",ver:"v1.0",date:"2016/2/28"};
+        return {name:"3dm杂谈",ver:"v2.0",date:"2017/1/15"};
     },
-    name : "3dm杂谈@v1.0"
+    name : "3dm杂谈@v2.0"
 }
 
 module.exports = seek;

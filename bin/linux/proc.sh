@@ -27,7 +27,7 @@ LOG_PATH="$NODE_PATH/log"
 echo $NODE_PATH
 echo $LOG_PATH
 
-# nohup sudo node web.js >./log/log &i
+# sudo node /home/ubuntu/node/proc.js >> /home/ubuntu/node/log/proc_log
 
 
 read -n 1

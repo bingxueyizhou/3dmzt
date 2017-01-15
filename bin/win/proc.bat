@@ -14,8 +14,7 @@ set LOG_PATH=!NODE_PATH!\log
 echo !NODE_PATH!
 echo !LOG_PATH!
 
-rem node !NODE_PATH!\web.js >>!LOG_PATH!\web.log 2>>!LOG_PATH!\web.err
-
+node !NODE_PATH!\proc.js >>!LOG_PATH!\proc.log 2>>!LOG_PATH!\proc.err
 
 pause
 goto end

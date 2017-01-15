@@ -3,11 +3,12 @@
  */
 var express = require('express');
 var sqlite3 = require('sqlite3');
+var CONF    = require('../../class/conf.js');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var db = new sqlite3.Database('./sqlitedb/home.sqlite');
+    var db = new sqlite3.Database(CONF.DB+'/home.sqlite');
     db.all("SELECT * FROM home ORDER BY id DESC LIMIT 16",function(err,rows){
         if(err){
             console.error(err);

@@ -1,6 +1,24 @@
-## 2016/12/12
+## success to recover source code.
+# 2017/1/15
+I have success to recover the 3dmzt website
+
+## success to install sqlite3
+# 2016/12/21
+refrence to [node-gyp](https://www.npmjs.com/package/node-gyp)
+download python2.7、Visual C++ Build tools 2015
+using `npm install sqlite3 --build-from-source --save`
+
+## add shell script
+# 2016/12/19
+for base function of get program path. And download new modules.
+
+## add function: get some base path
+# 2016/12/13
+add function to get some base path of program, such as Home, log and so on
+
+## create start script in windows and linux.
+# 2016/12/12
 I want to change the directions structure.
-# create start script in windows and linux.
 
 ## 2016/12/11
 restart the project in github.
